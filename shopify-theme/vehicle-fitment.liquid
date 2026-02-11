@@ -1,0 +1,215 @@
+<div id="jb-fitment-checker" class="jb-fitment">
+  <div class="jb-fitment__header">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
+    </svg>
+    <span>Does this rack fit your vehicle?</span>
+  </div>
+
+  <div class="jb-fitment__form">
+    <div class="jb-fitment__row">
+      <select id="jb-state" class="jb-fitment__select">
+        <option value="">State</option>
+        <option value="QLD">QLD</option>
+        <option value="NSW">NSW</option>
+        <option value="VIC">VIC</option>
+        <option value="SA">SA</option>
+        <option value="WA">WA</option>
+        <option value="TAS">TAS</option>
+        <option value="ACT">ACT</option>
+        <option value="NT">NT</option>
+      </select>
+      <input
+        type="text"
+        id="jb-rego"
+        class="jb-fitment__input"
+        placeholder="Enter your rego"
+        maxlength="10"
+        autocomplete="off"
+      />
+      <button id="jb-lookup-btn" class="jb-fitment__btn" onclick="JBFitment.lookup()">
+        Check Fitment
+      </button>
+    </div>
+  </div>
+
+  <div id="jb-fitment-result" class="jb-fitment__result" style="display:none;"></div>
+</div>
+
+<style>
+  .jb-fitment {
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: inherit;
+  }
+  .jb-fitment__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .jb-fitment__row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .jb-fitment__select {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 80px;
+  }
+  .jb-fitment__input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    text-transform: uppercase;
+    min-width: 140px;
+  }
+  .jb-fitment__btn {
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .jb-fitment__btn:hover { opacity: 0.85; }
+  .jb-fitment__btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .jb-fitment__result {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .jb-fitment__result--compatible {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+  }
+  .jb-fitment__result--incompatible {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #991b1b;
+  }
+  .jb-fitment__result--unknown {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    color: #92400e;
+  }
+  .jb-fitment__result--error {
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    color: #374151;
+  }
+  .jb-fitment__vehicle {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 480px) {
+    .jb-fitment__row { flex-direction: column; }
+    .jb-fitment__select { width: 100%; }
+  }
+</style>
+
+<script>
+  const JBFitment = {
+    API_URL: 'https://your-vercel-app.vercel.app/api/vehicle-lookup',
+
+    async lookup() {
+      const state = document.getElementById('jb-state').value;
+      const rego = document.getElementById('jb-rego').value.trim().toUpperCase();
+      const btn = document.getElementById('jb-lookup-btn');
+      const resultDiv = document.getElementById('jb-fitment-result');
+
+      if (!state || !rego) {
+        this.showResult('error', 'Please select your state and enter your rego.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Checking...';
+      resultDiv.style.display = 'none';
+
+      try {
+        const res = await fetch(this.API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ rego, state }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          this.showResult('error', data.error || 'Lookup failed. Please try again.');
+          return;
+        }
+
+        const { vehicle, fitment } = data;
+        const vehicleName = vehicle.description || `${vehicle.make} ${vehicle.model} (${vehicle.year})`;
+
+        if (fitment.compatible === true) {
+          this.showResult('compatible',
+            `<div class="jb-fitment__vehicle">\u2705 ${vehicleName}</div>
+             Great news! Your vehicle has a compatible 2" hitch receiver. This rack will fit your ${vehicle.make}.
+             ${fitment.notes ? `<br><small>${fitment.notes}</small>` : ''}`
+          );
+        } else if (fitment.compatible === false) {
+          this.showResult('incompatible',
+            `<div class="jb-fitment__vehicle">\u274C ${vehicleName}</div>
+             Unfortunately, your vehicle doesn't have a standard 2" hitch receiver.
+             ${fitment.notes ? `<br><small>${fitment.notes}</small>` : ''}
+             <br><a href="/pages/contact" style="color:inherit;text-decoration:underline;">Contact us</a> for alternative mounting options.`
+          );
+        } else {
+          this.showResult('unknown',
+            `<div class="jb-fitment__vehicle">\u26A0\uFE0F ${vehicleName}</div>
+             We couldn't confirm fitment for your specific vehicle.
+             <br><a href="/pages/contact" style="color:inherit;text-decoration:underline;">Contact us</a> and we'll check compatibility for you.`
+          );
+        }
+
+        // Optional: track the lookup in GA4
+        if (typeof gtag === 'function') {
+          gtag('event', 'vehicle_fitment_check', {
+            vehicle_make: vehicle.make,
+            vehicle_model: vehicle.model,
+            vehicle_year: vehicle.year,
+            fitment_result: fitment.compatible === true ? 'compatible' : fitment.compatible === false ? 'incompatible' : 'unknown',
+          });
+        }
+
+      } catch (err) {
+        this.showResult('error', 'Something went wrong. Please try again.');
+        console.error('JB Fitment error:', err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Check Fitment';
+      }
+    },
+
+    showResult(type, html) {
+      const resultDiv = document.getElementById('jb-fitment-result');
+      resultDiv.className = `jb-fitment__result jb-fitment__result--${type}`;
+      resultDiv.innerHTML = html;
+      resultDiv.style.display = 'block';
+    }
+  };
+
+  // Allow Enter key to trigger lookup
+  document.getElementById('jb-rego')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') JBFitment.lookup();
+  });
+</script>

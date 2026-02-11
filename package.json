@@ -1,0 +1,19 @@
+{
+  "name": "jbracks-vehicle-fitment",
+  "version": "1.0.0",
+  "description": "JB Racks vehicle fitment checker for Shopify using RegCheck API",
+  "type": "module",
+  "scripts": {
+    "build": "node build-compatibility.js",
+    "dev": "vercel dev",
+    "deploy": "npm run build && vercel deploy --prod"
+  },
+  "keywords": [
+    "vehicle-fitment",
+    "shopify",
+    "regcheck",
+    "vercel"
+  ],
+  "author": "JB Racks",
+  "license": "MIT"
+}

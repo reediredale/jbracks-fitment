@@ -1,0 +1,13 @@
+make,model,year_from,year_to,variant,has_2inch_hitch,notes
+Toyota,HiLux,2015,2025,SR5,true,Factory towbar with 2" receiver
+Toyota,HiLux,2015,2025,Rugged,true,Factory towbar with 2" receiver
+Toyota,LandCruiser,2007,2021,200 Series,true,
+Toyota,LandCruiser,2021,2025,300 Series,true,
+Ford,Ranger,2011,2025,XLT,true,
+Ford,Ranger,2011,2025,Wildtrak,true,
+Nissan,Navara,2014,2025,ST-X,true,
+Mitsubishi,Triton,2015,2025,GLS,true,
+Isuzu,D-Max,2020,2025,X-Terrain,true,
+Mazda,BT-50,2020,2025,GT,true,
+Toyota,RAV4,2019,2025,GXL,false,Aftermarket hitch available - not factory 2 inch
+Hyundai,Tucson,2021,2025,Highlander,false,No 2" hitch option
