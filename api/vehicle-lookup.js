@@ -76,15 +76,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'rego and state are required' });
   }
 
-  const username = process.env.REGCHECK_USERNAME;
-
-  // Check if username is configured
-  if (!username) {
-    return res.status(500).json({
-      error: 'API configuration error',
-      details: 'REGCHECK_USERNAME environment variable is not set'
-    });
-  }
+  const username = process.env.REGCHECK_USERNAME || 'jbracks';
 
   try {
     // 1. Call RegCheck API
