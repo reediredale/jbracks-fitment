@@ -78,6 +78,14 @@ export default async function handler(req, res) {
 
   const username = process.env.REGCHECK_USERNAME;
 
+  // Check if username is configured
+  if (!username) {
+    return res.status(500).json({
+      error: 'API configuration error',
+      details: 'REGCHECK_USERNAME environment variable is not set'
+    });
+  }
+
   try {
     // 1. Call RegCheck API
     const apiUrl = `https://www.regcheck.org.uk/api/reg.asmx/CheckAustralia?RegistrationNumber=${encodeURIComponent(rego)}&username=${encodeURIComponent(username)}&State=${encodeURIComponent(state)}`;
@@ -85,13 +93,31 @@ export default async function handler(req, res) {
     const apiRes = await fetch(apiUrl);
     const xml = await apiRes.text();
 
-    // 2. Extract vehicleJson from XML response
-    const jsonMatch = xml.match(/<vehicleJson>([\s\S]*?)<\/vehicleJson>/);
-    if (!jsonMatch) {
-      return res.status(404).json({ error: 'Vehicle not found', raw: xml });
+    // Log response for debugging
+    console.log('RegCheck API response status:', apiRes.status);
+    console.log('RegCheck API response (first 500 chars):', xml.substring(0, 500));
+
+    // 2. Check for API errors in XML
+    const errorMatch = xml.match(/<Message>([\s\S]*?)<\/Message>/);
+    if (errorMatch) {
+      return res.status(400).json({
+        error: 'RegCheck API error',
+        details: errorMatch[1],
+        apiResponse: xml
+      });
     }
 
-    // Decode XML entities and parse JSON
+    // 3. Extract vehicleJson from XML response
+    const jsonMatch = xml.match(/<vehicleJson>([\s\S]*?)<\/vehicleJson>/);
+    if (!jsonMatch) {
+      return res.status(404).json({
+        error: 'Vehicle not found',
+        details: 'No vehicle data returned from RegCheck API',
+        apiResponse: xml.substring(0, 1000)
+      });
+    }
+
+    // 4. Decode XML entities and parse JSON
     const jsonStr = jsonMatch[1]
       .replace(/&amp;/g, '&')
       .replace(/&lt;/g, '<')
@@ -100,7 +126,7 @@ export default async function handler(req, res) {
 
     const vehicle = JSON.parse(jsonStr);
 
-    // 3. Extract fields for matching
+    // 5. Extract fields for matching
     const make = vehicle.CarMake?.CurrentTextValue
               || vehicle.MakeDescription?.CurrentTextValue
               || '';
@@ -112,10 +138,10 @@ export default async function handler(req, res) {
                  || vehicle.extended?.series
                  || '';
 
-    // 4. Match against compatibility DB
+    // 6. Match against compatibility DB
     const match = matchVehicle(make, model, year, variant);
 
-    // 5. Return result
+    // 7. Return result
     return res.status(200).json({
       vehicle: {
         make,
@@ -144,6 +170,10 @@ export default async function handler(req, res) {
     });
   } catch (err) {
     console.error('Vehicle lookup error:', err);
-    return res.status(500).json({ error: 'Lookup failed. Please try again.' });
+    return res.status(500).json({
+      error: 'Lookup failed',
+      details: err.message,
+      type: err.name
+    });
   }
 }
