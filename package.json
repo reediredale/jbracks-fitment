@@ -15,5 +15,8 @@
     "vercel"
   ],
   "author": "JB Racks",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
 }
