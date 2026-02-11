@@ -61,6 +61,11 @@ function matchVehicle(make, model, year, variant) {
 // --- API handler ---
 
 export default async function handler(req, res) {
+  // Set CORS headers explicitly
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
@@ -76,7 +81,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'rego and state are required' });
   }
 
-  const username = process.env.REGCHECK_USERNAME || 'jbracks';
+  const username = 'jbracks';
 
   try {
     // 1. Call RegCheck API
