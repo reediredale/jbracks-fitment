@@ -1,30 +1,1178 @@
-// Compatibility database - embedded to avoid import issues
+// Compatibility database - embedded (126 vehicles across 20 makes)
 const compatibilityDB = {
   "TOYOTA": [
-    { "make": "Toyota", "model": "HiLux", "year_from": 2015, "year_to": 2025, "variant": "SR5", "has_2inch_hitch": true, "notes": "Factory towbar with 2\" receiver" },
-    { "make": "Toyota", "model": "HiLux", "year_from": 2015, "year_to": 2025, "variant": "Rugged", "has_2inch_hitch": true, "notes": "Factory towbar with 2\" receiver" },
-    { "make": "Toyota", "model": "LandCruiser", "year_from": 2007, "year_to": 2021, "variant": "200 Series", "has_2inch_hitch": true, "notes": "" },
-    { "make": "Toyota", "model": "LandCruiser", "year_from": 2021, "year_to": 2025, "variant": "300 Series", "has_2inch_hitch": true, "notes": "" },
-    { "make": "Toyota", "model": "RAV4", "year_from": 2019, "year_to": 2025, "variant": "GXL", "has_2inch_hitch": false, "notes": "Aftermarket hitch available - not factory 2 inch" }
+    {
+      "make": "Toyota",
+      "model": "HiLux",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "SR",
+      "has_2inch_hitch": true,
+      "notes": "Factory towbar with 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "HiLux",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "SR5",
+      "has_2inch_hitch": true,
+      "notes": "Factory towbar with 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "HiLux",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "Workmate",
+      "has_2inch_hitch": true,
+      "notes": "Factory towbar with 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "HiLux",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "Rugged",
+      "has_2inch_hitch": true,
+      "notes": "Factory towbar with 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "HiLux",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "Rugged X",
+      "has_2inch_hitch": true,
+      "notes": "Factory towbar with 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "HiLux",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "Rogue",
+      "has_2inch_hitch": true,
+      "notes": "Factory towbar with 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "LandCruiser",
+      "year_from": 2007,
+      "year_to": 2021,
+      "variant": "200 Series",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "LandCruiser",
+      "year_from": 2021,
+      "year_to": 2025,
+      "variant": "300 Series",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "LandCruiser",
+      "year_from": 2009,
+      "year_to": 2025,
+      "variant": "Prado",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "Fortuner",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "GXL",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "Fortuner",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Crusade",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Toyota",
+      "model": "RAV4",
+      "year_from": 2019,
+      "year_to": 2025,
+      "variant": "GX",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Toyota",
+      "model": "RAV4",
+      "year_from": 2019,
+      "year_to": 2025,
+      "variant": "GXL",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Toyota",
+      "model": "RAV4",
+      "year_from": 2019,
+      "year_to": 2025,
+      "variant": "Cruiser",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Toyota",
+      "model": "Kluger",
+      "year_from": 2014,
+      "year_to": 2025,
+      "variant": "GX",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Toyota",
+      "model": "Kluger",
+      "year_from": 2014,
+      "year_to": 2025,
+      "variant": "GXL",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    }
   ],
   "FORD": [
-    { "make": "Ford", "model": "Ranger", "year_from": 2011, "year_to": 2025, "variant": "XLT", "has_2inch_hitch": true, "notes": "" },
-    { "make": "Ford", "model": "Ranger", "year_from": 2011, "year_to": 2025, "variant": "Wildtrak", "has_2inch_hitch": true, "notes": "" }
+    {
+      "make": "Ford",
+      "model": "Ranger",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "XL",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Ranger",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "XLS",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Ranger",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "XLT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Ranger",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Wildtrak",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Ranger",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Raptor",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Everest",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Ambiente",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Everest",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Trend",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Everest",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Titanium",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Ford",
+      "model": "Everest",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Sport",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
   ],
   "NISSAN": [
-    { "make": "Nissan", "model": "Navara", "year_from": 2014, "year_to": 2025, "variant": "ST-X", "has_2inch_hitch": true, "notes": "" }
+    {
+      "make": "Nissan",
+      "model": "Navara",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "SL",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Navara",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "ST",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Navara",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "ST-X",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Navara",
+      "year_from": 2021,
+      "year_to": 2025,
+      "variant": "PRO-4X",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Patrol",
+      "year_from": 2010,
+      "year_to": 2025,
+      "variant": "Ti",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Patrol",
+      "year_from": 2010,
+      "year_to": 2025,
+      "variant": "Ti-L",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Pathfinder",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "ST",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Nissan",
+      "model": "Pathfinder",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "ST-L",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
   ],
   "MITSUBISHI": [
-    { "make": "Mitsubishi", "model": "Triton", "year_from": 2015, "year_to": 2025, "variant": "GLS", "has_2inch_hitch": true, "notes": "" }
+    {
+      "make": "Mitsubishi",
+      "model": "Triton",
+      "year_from": 2006,
+      "year_to": 2025,
+      "variant": "GLX",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Triton",
+      "year_from": 2006,
+      "year_to": 2025,
+      "variant": "GLS",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Triton",
+      "year_from": 2006,
+      "year_to": 2025,
+      "variant": "GSR",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Pajero",
+      "year_from": 2006,
+      "year_to": 2021,
+      "variant": "GLX",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Pajero",
+      "year_from": 2006,
+      "year_to": 2021,
+      "variant": "GLS",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Pajero",
+      "year_from": 2006,
+      "year_to": 2021,
+      "variant": "Exceed",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Pajero Sport",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "GLS",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Pajero Sport",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "Exceed",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Outlander",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "ES",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Outlander",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "LS",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Mitsubishi",
+      "model": "Outlander",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "Exceed",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    }
   ],
   "ISUZU": [
-    { "make": "Isuzu", "model": "D-Max", "year_from": 2020, "year_to": 2025, "variant": "X-Terrain", "has_2inch_hitch": true, "notes": "" }
+    {
+      "make": "Isuzu",
+      "model": "D-Max",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "SX",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "D-Max",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "LS-M",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "D-Max",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "LS-U",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "D-Max",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "LS-T",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "D-Max",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "X-Terrain",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "MU-X",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "LS-M",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "MU-X",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "LS-U",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Isuzu",
+      "model": "MU-X",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "LS-T",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
   ],
   "MAZDA": [
-    { "make": "Mazda", "model": "BT-50", "year_from": 2020, "year_to": 2025, "variant": "GT", "has_2inch_hitch": true, "notes": "" }
+    {
+      "make": "Mazda",
+      "model": "BT-50",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "XT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "BT-50",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "XTR",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "BT-50",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "GT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "BT-50",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "Thunder",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-9",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "Sport",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-9",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "Touring",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-9",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "GT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-9",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "Azami",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-5",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "Maxx",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-5",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "Touring",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-8",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "Sport",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-8",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "Touring",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "VOLKSWAGEN": [
+    {
+      "make": "Volkswagen",
+      "model": "Amarok",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Core",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Amarok",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Highline",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Amarok",
+      "year_from": 2023,
+      "year_to": 2025,
+      "variant": "PanAmericana",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Amarok",
+      "year_from": 2023,
+      "year_to": 2025,
+      "variant": "Aventura",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "MERCEDES-BENZ": [
+    {
+      "make": "Mercedes-Benz",
+      "model": "X-Class",
+      "year_from": 2018,
+      "year_to": 2020,
+      "variant": "Pure",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "X-Class",
+      "year_from": 2018,
+      "year_to": 2020,
+      "variant": "Progressive",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Mercedes-Benz",
+      "model": "X-Class",
+      "year_from": 2018,
+      "year_to": 2020,
+      "variant": "Power",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "RAM": [
+    {
+      "make": "RAM",
+      "model": "1500",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Laramie",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "RAM",
+      "model": "1500",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Limited",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "RAM",
+      "model": "2500",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Laramie",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "RAM",
+      "model": "3500",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Laramie",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "CHEVROLET": [
+    {
+      "make": "Chevrolet",
+      "model": "Silverado",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "LT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Chevrolet",
+      "model": "Silverado",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "LTZ",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "GWM": [
+    {
+      "make": "GWM",
+      "model": "Ute",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "Cannon",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "GWM",
+      "model": "Ute",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "Cannon-L",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "LDV": [
+    {
+      "make": "LDV",
+      "model": "T60",
+      "year_from": 2017,
+      "year_to": 2025,
+      "variant": "Pro",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "LDV",
+      "model": "T60",
+      "year_from": 2017,
+      "year_to": 2025,
+      "variant": "Luxe",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "LDV",
+      "model": "T60",
+      "year_from": 2017,
+      "year_to": 2025,
+      "variant": "Trailrider",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "SSANGYONG": [
+    {
+      "make": "SsangYong",
+      "model": "Musso",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "ELX",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "SsangYong",
+      "model": "Musso",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "Ultimate",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "SsangYong",
+      "model": "Rexton",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "ELX",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "SsangYong",
+      "model": "Rexton",
+      "year_from": 2018,
+      "year_to": 2025,
+      "variant": "Ultimate",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "HOLDEN": [
+    {
+      "make": "Holden",
+      "model": "Colorado",
+      "year_from": 2012,
+      "year_to": 2020,
+      "variant": "LS",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Holden",
+      "model": "Colorado",
+      "year_from": 2012,
+      "year_to": 2020,
+      "variant": "LT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Holden",
+      "model": "Colorado",
+      "year_from": 2012,
+      "year_to": 2020,
+      "variant": "LTZ",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Holden",
+      "model": "Colorado",
+      "year_from": 2012,
+      "year_to": 2020,
+      "variant": "Z71",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Holden",
+      "model": "Trailblazer",
+      "year_from": 2016,
+      "year_to": 2020,
+      "variant": "LT",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Holden",
+      "model": "Trailblazer",
+      "year_from": 2016,
+      "year_to": 2020,
+      "variant": "LTZ",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "JEEP": [
+    {
+      "make": "Jeep",
+      "model": "Gladiator",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "Overland",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Jeep",
+      "model": "Gladiator",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "Rubicon",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Jeep",
+      "model": "Wrangler",
+      "year_from": 2007,
+      "year_to": 2025,
+      "variant": "Sport",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Jeep",
+      "model": "Wrangler",
+      "year_from": 2007,
+      "year_to": 2025,
+      "variant": "Rubicon",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Laredo",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Limited",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Jeep",
+      "model": "Grand Cherokee",
+      "year_from": 2011,
+      "year_to": 2025,
+      "variant": "Overland",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "LAND ROVER": [
+    {
+      "make": "Land Rover",
+      "model": "Defender",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "90",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Land Rover",
+      "model": "Defender",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "110",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Land Rover",
+      "model": "Defender",
+      "year_from": 2020,
+      "year_to": 2025,
+      "variant": "130",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Land Rover",
+      "model": "Discovery",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "SE",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Land Rover",
+      "model": "Discovery",
+      "year_from": 2005,
+      "year_to": 2025,
+      "variant": "HSE",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Land Rover",
+      "model": "Discovery Sport",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "S",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Land Rover",
+      "model": "Discovery Sport",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "SE",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    }
   ],
   "HYUNDAI": [
-    { "make": "Hyundai", "model": "Tucson", "year_from": 2021, "year_to": 2025, "variant": "Highlander", "has_2inch_hitch": false, "notes": "No 2\" hitch option" }
+    {
+      "make": "Hyundai",
+      "model": "Tucson",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Active",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Tucson",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Elite",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Tucson",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Highlander",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "Active",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "Elite",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Santa Fe",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "Highlander",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Palisade",
+      "year_from": 2021,
+      "year_to": 2025,
+      "variant": "Elite",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Hyundai",
+      "model": "Palisade",
+      "year_from": 2021,
+      "year_to": 2025,
+      "variant": "Highlander",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    }
+  ],
+  "KIA": [
+    {
+      "make": "Kia",
+      "model": "Sorento",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Sport",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Kia",
+      "model": "Sorento",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "GT-Line",
+      "has_2inch_hitch": true,
+      "notes": "Factory 2\" receiver"
+    },
+    {
+      "make": "Kia",
+      "model": "Carnival",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "S",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Kia",
+      "model": "Carnival",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "SLi",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Kia",
+      "model": "Sportage",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "S",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    },
+    {
+      "make": "Kia",
+      "model": "Sportage",
+      "year_from": 2016,
+      "year_to": 2025,
+      "variant": "SLi",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    }
+  ],
+  "SUBARU": [
+    {
+      "make": "Subaru",
+      "model": "Outback",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Base",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Subaru",
+      "model": "Outback",
+      "year_from": 2015,
+      "year_to": 2025,
+      "variant": "Premium",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Subaru",
+      "model": "Forester",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "Base",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    },
+    {
+      "make": "Subaru",
+      "model": "Forester",
+      "year_from": 2013,
+      "year_to": 2025,
+      "variant": "Premium",
+      "has_2inch_hitch": false,
+      "notes": "Aftermarket only - no factory 2\""
+    }
+  ],
+  "HONDA": [
+    {
+      "make": "Honda",
+      "model": "CR-V",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "VTi",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    },
+    {
+      "make": "Honda",
+      "model": "CR-V",
+      "year_from": 2012,
+      "year_to": 2025,
+      "variant": "VTi-L",
+      "has_2inch_hitch": false,
+      "notes": "No 2\" hitch option"
+    }
   ]
 };
 
