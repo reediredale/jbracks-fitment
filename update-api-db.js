@@ -3,8 +3,12 @@ import fs from 'fs';
 // Read the compatibility database
 const db = JSON.parse(fs.readFileSync('./data/hitch-compatibility.json', 'utf8'));
 
+// Count vehicles and makes
+const totalVehicles = Object.values(db).reduce((sum, arr) => sum + arr.length, 0);
+const totalMakes = Object.keys(db).length;
+
 // Create the API file content
-const apiContent = `// Compatibility database - embedded (126 vehicles across 20 makes)
+const apiContent = `// Compatibility database - embedded (${totalVehicles} vehicles across ${totalMakes} makes)
 const compatibilityDB = ${JSON.stringify(db, null, 2)};
 
 // Matching logic
@@ -161,4 +165,4 @@ export default async function handler(req, res) {
 
 // Write the updated API file
 fs.writeFileSync('./api/vehicle-lookup.js', apiContent);
-console.log('Updated api/vehicle-lookup.js with 126 vehicles');
+console.log(`Updated api/vehicle-lookup.js with ${totalVehicles} vehicles`);

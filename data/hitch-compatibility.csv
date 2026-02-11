@@ -1,127 +1,72 @@
 make,model,year_from,year_to,variant,has_2inch_hitch,notes
-Toyota,HiLux,2005,2025,SR,true,Factory towbar with 2" receiver
-Toyota,HiLux,2005,2025,SR5,true,Factory towbar with 2" receiver
-Toyota,HiLux,2005,2025,Workmate,true,Factory towbar with 2" receiver
-Toyota,HiLux,2005,2025,Rugged,true,Factory towbar with 2" receiver
-Toyota,HiLux,2005,2025,Rugged X,true,Factory towbar with 2" receiver
-Toyota,HiLux,2005,2025,Rogue,true,Factory towbar with 2" receiver
-Toyota,LandCruiser,2007,2021,200 Series,true,Factory 2" receiver
-Toyota,LandCruiser,2021,2025,300 Series,true,Factory 2" receiver
-Toyota,LandCruiser,2009,2025,Prado,true,Factory 2" receiver
-Toyota,Fortuner,2015,2025,GXL,true,Factory 2" receiver
-Toyota,Fortuner,2015,2025,Crusade,true,Factory 2" receiver
-Toyota,RAV4,2019,2025,GX,false,Aftermarket only - no factory 2"
-Toyota,RAV4,2019,2025,GXL,false,Aftermarket only - no factory 2"
-Toyota,RAV4,2019,2025,Cruiser,false,Aftermarket only - no factory 2"
-Toyota,Kluger,2014,2025,GX,false,Aftermarket only - no factory 2"
-Toyota,Kluger,2014,2025,GXL,false,Aftermarket only - no factory 2"
-Ford,Ranger,2011,2025,XL,true,Factory 2" receiver
-Ford,Ranger,2011,2025,XLS,true,Factory 2" receiver
-Ford,Ranger,2011,2025,XLT,true,Factory 2" receiver
-Ford,Ranger,2011,2025,Wildtrak,true,Factory 2" receiver
-Ford,Ranger,2011,2025,Raptor,true,Factory 2" receiver
-Ford,Everest,2015,2025,Ambiente,true,Factory 2" receiver
-Ford,Everest,2015,2025,Trend,true,Factory 2" receiver
-Ford,Everest,2015,2025,Titanium,true,Factory 2" receiver
-Ford,Everest,2015,2025,Sport,true,Factory 2" receiver
-Nissan,Navara,2005,2025,SL,true,Factory 2" receiver
-Nissan,Navara,2005,2025,ST,true,Factory 2" receiver
-Nissan,Navara,2005,2025,ST-X,true,Factory 2" receiver
-Nissan,Navara,2021,2025,PRO-4X,true,Factory 2" receiver
-Nissan,Patrol,2010,2025,Ti,true,Factory 2" receiver
-Nissan,Patrol,2010,2025,Ti-L,true,Factory 2" receiver
-Nissan,Pathfinder,2013,2025,ST,true,Factory 2" receiver
-Nissan,Pathfinder,2013,2025,ST-L,true,Factory 2" receiver
-Mitsubishi,Triton,2006,2025,GLX,true,Factory 2" receiver
-Mitsubishi,Triton,2006,2025,GLS,true,Factory 2" receiver
-Mitsubishi,Triton,2006,2025,GSR,true,Factory 2" receiver
-Mitsubishi,Pajero,2006,2021,GLX,true,Factory 2" receiver
-Mitsubishi,Pajero,2006,2021,GLS,true,Factory 2" receiver
-Mitsubishi,Pajero,2006,2021,Exceed,true,Factory 2" receiver
-Mitsubishi,Pajero Sport,2016,2025,GLS,true,Factory 2" receiver
-Mitsubishi,Pajero Sport,2016,2025,Exceed,true,Factory 2" receiver
-Mitsubishi,Outlander,2012,2025,ES,false,Aftermarket only - no factory 2"
-Mitsubishi,Outlander,2012,2025,LS,false,Aftermarket only - no factory 2"
-Mitsubishi,Outlander,2012,2025,Exceed,false,Aftermarket only - no factory 2"
-Isuzu,D-Max,2012,2025,SX,true,Factory 2" receiver
-Isuzu,D-Max,2012,2025,LS-M,true,Factory 2" receiver
-Isuzu,D-Max,2012,2025,LS-U,true,Factory 2" receiver
-Isuzu,D-Max,2012,2025,LS-T,true,Factory 2" receiver
-Isuzu,D-Max,2020,2025,X-Terrain,true,Factory 2" receiver
-Isuzu,MU-X,2013,2025,LS-M,true,Factory 2" receiver
-Isuzu,MU-X,2013,2025,LS-U,true,Factory 2" receiver
-Isuzu,MU-X,2013,2025,LS-T,true,Factory 2" receiver
-Mazda,BT-50,2011,2025,XT,true,Factory 2" receiver
-Mazda,BT-50,2011,2025,XTR,true,Factory 2" receiver
-Mazda,BT-50,2011,2025,GT,true,Factory 2" receiver
-Mazda,BT-50,2020,2025,Thunder,true,Factory 2" receiver
-Mazda,CX-9,2016,2025,Sport,true,Factory 2" receiver
-Mazda,CX-9,2016,2025,Touring,true,Factory 2" receiver
-Mazda,CX-9,2016,2025,GT,true,Factory 2" receiver
-Mazda,CX-9,2016,2025,Azami,true,Factory 2" receiver
-Mazda,CX-5,2012,2025,Maxx,false,Aftermarket only - no factory 2"
-Mazda,CX-5,2012,2025,Touring,false,Aftermarket only - no factory 2"
-Mazda,CX-8,2018,2025,Sport,true,Factory 2" receiver
-Mazda,CX-8,2018,2025,Touring,true,Factory 2" receiver
-Volkswagen,Amarok,2011,2025,Core,true,Factory 2" receiver
-Volkswagen,Amarok,2011,2025,Highline,true,Factory 2" receiver
-Volkswagen,Amarok,2023,2025,PanAmericana,true,Factory 2" receiver
-Volkswagen,Amarok,2023,2025,Aventura,true,Factory 2" receiver
-Mercedes-Benz,X-Class,2018,2020,Pure,true,Factory 2" receiver
-Mercedes-Benz,X-Class,2018,2020,Progressive,true,Factory 2" receiver
-Mercedes-Benz,X-Class,2018,2020,Power,true,Factory 2" receiver
-RAM,1500,2015,2025,Laramie,true,Factory 2" receiver
-RAM,1500,2015,2025,Limited,true,Factory 2" receiver
-RAM,2500,2015,2025,Laramie,true,Factory 2" receiver
-RAM,3500,2015,2025,Laramie,true,Factory 2" receiver
-Chevrolet,Silverado,2018,2025,LT,true,Factory 2" receiver
-Chevrolet,Silverado,2018,2025,LTZ,true,Factory 2" receiver
-GWM,Ute,2020,2025,Cannon,true,Factory 2" receiver
-GWM,Ute,2020,2025,Cannon-L,true,Factory 2" receiver
-LDV,T60,2017,2025,Pro,true,Factory 2" receiver
-LDV,T60,2017,2025,Luxe,true,Factory 2" receiver
-LDV,T60,2017,2025,Trailrider,true,Factory 2" receiver
-SsangYong,Musso,2018,2025,ELX,true,Factory 2" receiver
-SsangYong,Musso,2018,2025,Ultimate,true,Factory 2" receiver
-SsangYong,Rexton,2018,2025,ELX,true,Factory 2" receiver
-SsangYong,Rexton,2018,2025,Ultimate,true,Factory 2" receiver
-Holden,Colorado,2012,2020,LS,true,Factory 2" receiver
-Holden,Colorado,2012,2020,LT,true,Factory 2" receiver
-Holden,Colorado,2012,2020,LTZ,true,Factory 2" receiver
-Holden,Colorado,2012,2020,Z71,true,Factory 2" receiver
-Holden,Trailblazer,2016,2020,LT,true,Factory 2" receiver
-Holden,Trailblazer,2016,2020,LTZ,true,Factory 2" receiver
-Jeep,Gladiator,2020,2025,Overland,true,Factory 2" receiver
-Jeep,Gladiator,2020,2025,Rubicon,true,Factory 2" receiver
-Jeep,Wrangler,2007,2025,Sport,true,Factory 2" receiver
-Jeep,Wrangler,2007,2025,Rubicon,true,Factory 2" receiver
-Jeep,Grand Cherokee,2011,2025,Laredo,true,Factory 2" receiver
-Jeep,Grand Cherokee,2011,2025,Limited,true,Factory 2" receiver
-Jeep,Grand Cherokee,2011,2025,Overland,true,Factory 2" receiver
-Land Rover,Defender,2020,2025,90,true,Factory 2" receiver
-Land Rover,Defender,2020,2025,110,true,Factory 2" receiver
-Land Rover,Defender,2020,2025,130,true,Factory 2" receiver
-Land Rover,Discovery,2005,2025,SE,true,Factory 2" receiver
-Land Rover,Discovery,2005,2025,HSE,true,Factory 2" receiver
-Land Rover,Discovery Sport,2015,2025,S,false,Aftermarket only - no factory 2"
-Land Rover,Discovery Sport,2015,2025,SE,false,Aftermarket only - no factory 2"
-Hyundai,Tucson,2015,2025,Active,false,No 2" hitch option
-Hyundai,Tucson,2015,2025,Elite,false,No 2" hitch option
-Hyundai,Tucson,2015,2025,Highlander,false,No 2" hitch option
-Hyundai,Santa Fe,2012,2025,Active,true,Factory 2" receiver
-Hyundai,Santa Fe,2012,2025,Elite,true,Factory 2" receiver
-Hyundai,Santa Fe,2012,2025,Highlander,true,Factory 2" receiver
-Hyundai,Palisade,2021,2025,Elite,true,Factory 2" receiver
-Hyundai,Palisade,2021,2025,Highlander,true,Factory 2" receiver
-Kia,Sorento,2015,2025,Sport,true,Factory 2" receiver
-Kia,Sorento,2015,2025,GT-Line,true,Factory 2" receiver
-Kia,Carnival,2015,2025,S,false,Aftermarket only - no factory 2"
-Kia,Carnival,2015,2025,SLi,false,Aftermarket only - no factory 2"
-Kia,Sportage,2016,2025,S,false,No 2" hitch option
-Kia,Sportage,2016,2025,SLi,false,No 2" hitch option
-Subaru,Outback,2015,2025,Base,false,Aftermarket only - no factory 2"
-Subaru,Outback,2015,2025,Premium,false,Aftermarket only - no factory 2"
-Subaru,Forester,2013,2025,Base,false,Aftermarket only - no factory 2"
-Subaru,Forester,2013,2025,Premium,false,Aftermarket only - no factory 2"
-Honda,CR-V,2012,2025,VTi,false,No 2" hitch option
-Honda,CR-V,2012,2025,VTi-L,false,No 2" hitch option
+Toyota,LandCruiser,2025,2025,Prado,true,Factory-fitted integrated towbar with 50mm receiver (standard equipment)
+Nissan,Navara,2021,2026,PRO-4X,true,Factory-fitted towbar with 50mm receiver (standard equipment - exclusive to PRO-4X)
+Ford,Ranger,2026,2026,Super Duty,true,Factory-fitted 4500kg-rated towbar (standard equipment - Super Duty only)
+Isuzu,MU-X,2024,2025,Tour Mate,true,Factory-fitted towbar kit with 50mm receiver (Tour Mate special edition only)
+RAM,1500,2015,2025,Laramie,true,Factory 2" receiver (US import - verify Australian spec)
+RAM,1500,2015,2025,Limited,true,Factory 2" receiver (US import - verify Australian spec)
+RAM,2500,2015,2025,Laramie,true,Factory 2" receiver (US import - verify Australian spec)
+RAM,3500,2015,2025,Laramie,true,Factory 2" receiver (US import - verify Australian spec)
+Chevrolet,Silverado,2018,2025,LT,true,Factory 2" receiver (US import - verify Australian spec)
+Chevrolet,Silverado,2018,2025,LTZ,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Gladiator,2020,2025,Overland,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Gladiator,2020,2025,Rubicon,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Wrangler,2007,2025,Sport,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Wrangler,2007,2025,Rubicon,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Grand Cherokee,2011,2025,Laredo,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Grand Cherokee,2011,2025,Limited,true,Factory 2" receiver (US import - verify Australian spec)
+Jeep,Grand Cherokee,2011,2025,Overland,true,Factory 2" receiver (US import - verify Australian spec)
+Toyota,HiLux,2005,2025,SR,false,Optional accessory - not standard equipment. Requires dealer or aftermarket towbar
+Toyota,HiLux,2005,2025,SR5,false,Optional accessory - not standard equipment. Requires dealer or aftermarket towbar
+Toyota,HiLux,2005,2025,Workmate,false,Optional accessory - not standard equipment. Requires dealer or aftermarket towbar
+Toyota,HiLux,2005,2025,Rugged,false,Optional accessory - not standard equipment. Requires dealer or aftermarket towbar
+Toyota,HiLux,2005,2025,Rugged X,false,Optional accessory - not standard equipment. Requires dealer or aftermarket towbar
+Toyota,HiLux,2005,2025,Rogue,false,Optional accessory - not standard equipment. Requires dealer or aftermarket towbar
+Toyota,Fortuner,2015,2025,GXL,false,Genuine Toyota accessory available - not standard equipment
+Toyota,Fortuner,2015,2025,Crusade,false,Genuine Toyota accessory available - not standard equipment
+Ford,Ranger,2011,2025,XL,false,Tow pack (wiring) optional - physical towbar not standard equipment
+Ford,Ranger,2011,2025,XLS,false,Tow pack (wiring) optional - physical towbar not standard equipment
+Ford,Ranger,2011,2025,XLT,false,Tow pack (wiring) standard on XLT+ - physical towbar sold separately
+Ford,Ranger,2011,2025,Wildtrak,false,Tow pack (wiring) standard on XLT+ - physical towbar sold separately
+Ford,Ranger,2011,2025,Raptor,false,Tow pack (wiring) standard on XLT+ - physical towbar sold separately
+Ford,Everest,2015,2025,Ambiente,false,Tow pack (wiring) optional - physical towbar not standard equipment
+Ford,Everest,2015,2025,Trend,false,Tow pack (wiring) optional - physical towbar not standard equipment
+Ford,Everest,2015,2025,Titanium,false,Tow pack (wiring) standard on Sport+ - physical towbar sold separately
+Ford,Everest,2015,2025,Sport,false,Tow pack (wiring) standard on Sport+ - physical towbar sold separately
+Nissan,Navara,2005,2020,SL,false,Optional accessory - not standard equipment (standard on PRO-4X only)
+Nissan,Navara,2005,2020,ST,false,Optional accessory - not standard equipment (standard on PRO-4X only)
+Nissan,Navara,2005,2020,ST-X,false,Optional accessory - not standard equipment (standard on PRO-4X only)
+Nissan,Patrol,2010,2025,Ti,false,Aftermarket towbar required - not factory equipped
+Nissan,Patrol,2010,2025,Ti-L,false,Aftermarket towbar required - not factory equipped
+Nissan,Pathfinder,2013,2025,ST,false,Aftermarket towbar required - not factory equipped
+Nissan,Pathfinder,2013,2025,ST-L,false,Aftermarket towbar required - not factory equipped
+Nissan,X-Trail,2014,2025,ST,false,Genuine Nissan accessory available - not standard equipment
+Nissan,X-Trail,2014,2025,ST-L,false,Genuine Nissan accessory available - not standard equipment
+Mitsubishi,Triton,2006,2025,GLX,false,Dealer-fitted accessory - not factory standard equipment
+Mitsubishi,Triton,2006,2025,GLS,false,Dealer-fitted accessory - not factory standard equipment
+Mitsubishi,Triton,2006,2025,GSR,false,Dealer-fitted accessory - not factory standard equipment
+Mitsubishi,Pajero Sport,2016,2025,GLS,false,Dealer-fitted genuine accessory - not factory standard equipment
+Mitsubishi,Pajero Sport,2016,2025,Exceed,false,Dealer-fitted genuine accessory - not factory standard equipment
+Isuzu,D-Max,2012,2025,SX,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment
+Isuzu,D-Max,2012,2025,LS-M,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment
+Isuzu,D-Max,2012,2025,LS-U,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment
+Isuzu,D-Max,2012,2025,LS-T,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment
+Isuzu,D-Max,2020,2025,X-Terrain,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment
+Isuzu,MU-X,2013,2024,LS-M,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment (standard on Tour Mate only)
+Isuzu,MU-X,2013,2024,LS-U,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment (standard on Tour Mate only)
+Isuzu,MU-X,2013,2024,LS-T,false,Dealer-fitted accessory (~$1284 fitted) - not standard equipment (standard on Tour Mate only)
+Mazda,BT-50,2011,2025,XT,false,Aftermarket or genuine accessory required - not factory standard
+Mazda,BT-50,2011,2025,XTR,false,Aftermarket or genuine accessory required - not factory standard
+Mazda,BT-50,2011,2025,GT,false,Aftermarket or genuine accessory required - not factory standard
+Mazda,BT-50,2020,2025,Thunder,false,Aftermarket or genuine accessory required - not factory standard
+Mazda,CX-9,2016,2025,Sport,false,Genuine Mazda accessory available - not standard equipment. Affects foot-sensing tailgate if fitted
+Mazda,CX-9,2016,2025,Touring,false,Genuine Mazda accessory available - not standard equipment. Affects foot-sensing tailgate if fitted
+Mazda,CX-9,2016,2025,GT,false,Genuine Mazda accessory available - not standard equipment. Affects foot-sensing tailgate if fitted
+Mazda,CX-9,2016,2025,Azami,false,Genuine Mazda accessory available - not standard equipment. Affects foot-sensing tailgate if fitted
+Mazda,CX-8,2018,2025,Sport,false,Aftermarket towbar required - not factory equipped
+Mazda,CX-8,2018,2025,Touring,false,Aftermarket towbar required - not factory equipped
+GWM,Ute,2020,2025,Cannon,false,Aftermarket towbar required - not factory equipped
+GWM,Ute,2020,2025,Cannon-L,false,Aftermarket towbar required - not factory equipped
+LDV,T60,2017,2025,Pro,false,Aftermarket towbar required - not factory equipped
+LDV,T60,2017,2025,Luxe,false,Aftermarket towbar required - not factory equipped
+LDV,T60,2017,2025,Trailrider,false,Aftermarket towbar required - not factory equipped
