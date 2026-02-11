@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug RegCheck API</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        h1 { color: #4ec9b0; }
+        .form-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #569cd6;
+        }
+        input, select {
+            padding: 8px;
+            font-size: 16px;
+            font-family: monospace;
+            background: #2d2d2d;
+            color: #d4d4d4;
+            border: 1px solid #3e3e3e;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #0e639c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1177bb;
+        }
+        pre {
+            background: #2d2d2d;
+            padding: 20px;
+            border: 1px solid #3e3e3e;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .success { color: #4ec9b0; }
+        .error { color: #f48771; }
+    </style>
+</head>
+<body>
+    <h1>RegCheck API Debug Tool</h1>
+    <p>This will show the raw response from RegCheck API</p>
+
+    <div class="form-group">
+        <label>Registration:</label>
+        <input type="text" id="rego" value="030IF7" />
+    </div>
+
+    <div class="form-group">
+        <label>State:</label>
+        <select id="state">
+            <option value="QLD">QLD</option>
+            <option value="NSW">NSW</option>
+            <option value="VIC">VIC</option>
+            <option value="SA">SA</option>
+            <option value="WA">WA</option>
+            <option value="TAS">TAS</option>
+            <option value="NT">NT</option>
+            <option value="ACT">ACT</option>
+        </select>
+    </div>
+
+    <button onclick="test()">Test API</button>
+
+    <div id="result"></div>
+
+    <script>
+        async function test() {
+            const rego = document.getElementById('rego').value;
+            const state = document.getElementById('state').value;
+            const resultDiv = document.getElementById('result');
+
+            resultDiv.innerHTML = '<p>Loading...</p>';
+
+            try {
+                const response = await fetch('/api/debug-regcheck', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ rego, state })
+                });
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <h2 class="${data.success ? 'success' : 'error'}">
+                        ${data.success ? '✓ Response Received' : '✗ Error'}
+                    </h2>
+                    <h3>Full Response:</h3>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+
+            } catch (err) {
+                resultDiv.innerHTML = `
+                    <h2 class="error">✗ Error</h2>
+                    <pre>${err.message}</pre>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
