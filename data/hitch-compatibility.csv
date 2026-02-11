@@ -1,13 +1,127 @@
 make,model,year_from,year_to,variant,has_2inch_hitch,notes
-Toyota,HiLux,2015,2025,SR5,true,Factory towbar with 2" receiver
-Toyota,HiLux,2015,2025,Rugged,true,Factory towbar with 2" receiver
-Toyota,LandCruiser,2007,2021,200 Series,true,
-Toyota,LandCruiser,2021,2025,300 Series,true,
-Ford,Ranger,2011,2025,XLT,true,
-Ford,Ranger,2011,2025,Wildtrak,true,
-Nissan,Navara,2014,2025,ST-X,true,
-Mitsubishi,Triton,2015,2025,GLS,true,
-Isuzu,D-Max,2020,2025,X-Terrain,true,
-Mazda,BT-50,2020,2025,GT,true,
-Toyota,RAV4,2019,2025,GXL,false,Aftermarket hitch available - not factory 2 inch
-Hyundai,Tucson,2021,2025,Highlander,false,No 2" hitch option
+Toyota,HiLux,2005,2025,SR,true,Factory towbar with 2" receiver
+Toyota,HiLux,2005,2025,SR5,true,Factory towbar with 2" receiver
+Toyota,HiLux,2005,2025,Workmate,true,Factory towbar with 2" receiver
+Toyota,HiLux,2005,2025,Rugged,true,Factory towbar with 2" receiver
+Toyota,HiLux,2005,2025,Rugged X,true,Factory towbar with 2" receiver
+Toyota,HiLux,2005,2025,Rogue,true,Factory towbar with 2" receiver
+Toyota,LandCruiser,2007,2021,200 Series,true,Factory 2" receiver
+Toyota,LandCruiser,2021,2025,300 Series,true,Factory 2" receiver
+Toyota,LandCruiser,2009,2025,Prado,true,Factory 2" receiver
+Toyota,Fortuner,2015,2025,GXL,true,Factory 2" receiver
+Toyota,Fortuner,2015,2025,Crusade,true,Factory 2" receiver
+Toyota,RAV4,2019,2025,GX,false,Aftermarket only - no factory 2"
+Toyota,RAV4,2019,2025,GXL,false,Aftermarket only - no factory 2"
+Toyota,RAV4,2019,2025,Cruiser,false,Aftermarket only - no factory 2"
+Toyota,Kluger,2014,2025,GX,false,Aftermarket only - no factory 2"
+Toyota,Kluger,2014,2025,GXL,false,Aftermarket only - no factory 2"
+Ford,Ranger,2011,2025,XL,true,Factory 2" receiver
+Ford,Ranger,2011,2025,XLS,true,Factory 2" receiver
+Ford,Ranger,2011,2025,XLT,true,Factory 2" receiver
+Ford,Ranger,2011,2025,Wildtrak,true,Factory 2" receiver
+Ford,Ranger,2011,2025,Raptor,true,Factory 2" receiver
+Ford,Everest,2015,2025,Ambiente,true,Factory 2" receiver
+Ford,Everest,2015,2025,Trend,true,Factory 2" receiver
+Ford,Everest,2015,2025,Titanium,true,Factory 2" receiver
+Ford,Everest,2015,2025,Sport,true,Factory 2" receiver
+Nissan,Navara,2005,2025,SL,true,Factory 2" receiver
+Nissan,Navara,2005,2025,ST,true,Factory 2" receiver
+Nissan,Navara,2005,2025,ST-X,true,Factory 2" receiver
+Nissan,Navara,2021,2025,PRO-4X,true,Factory 2" receiver
+Nissan,Patrol,2010,2025,Ti,true,Factory 2" receiver
+Nissan,Patrol,2010,2025,Ti-L,true,Factory 2" receiver
+Nissan,Pathfinder,2013,2025,ST,true,Factory 2" receiver
+Nissan,Pathfinder,2013,2025,ST-L,true,Factory 2" receiver
+Mitsubishi,Triton,2006,2025,GLX,true,Factory 2" receiver
+Mitsubishi,Triton,2006,2025,GLS,true,Factory 2" receiver
+Mitsubishi,Triton,2006,2025,GSR,true,Factory 2" receiver
+Mitsubishi,Pajero,2006,2021,GLX,true,Factory 2" receiver
+Mitsubishi,Pajero,2006,2021,GLS,true,Factory 2" receiver
+Mitsubishi,Pajero,2006,2021,Exceed,true,Factory 2" receiver
+Mitsubishi,Pajero Sport,2016,2025,GLS,true,Factory 2" receiver
+Mitsubishi,Pajero Sport,2016,2025,Exceed,true,Factory 2" receiver
+Mitsubishi,Outlander,2012,2025,ES,false,Aftermarket only - no factory 2"
+Mitsubishi,Outlander,2012,2025,LS,false,Aftermarket only - no factory 2"
+Mitsubishi,Outlander,2012,2025,Exceed,false,Aftermarket only - no factory 2"
+Isuzu,D-Max,2012,2025,SX,true,Factory 2" receiver
+Isuzu,D-Max,2012,2025,LS-M,true,Factory 2" receiver
+Isuzu,D-Max,2012,2025,LS-U,true,Factory 2" receiver
+Isuzu,D-Max,2012,2025,LS-T,true,Factory 2" receiver
+Isuzu,D-Max,2020,2025,X-Terrain,true,Factory 2" receiver
+Isuzu,MU-X,2013,2025,LS-M,true,Factory 2" receiver
+Isuzu,MU-X,2013,2025,LS-U,true,Factory 2" receiver
+Isuzu,MU-X,2013,2025,LS-T,true,Factory 2" receiver
+Mazda,BT-50,2011,2025,XT,true,Factory 2" receiver
+Mazda,BT-50,2011,2025,XTR,true,Factory 2" receiver
+Mazda,BT-50,2011,2025,GT,true,Factory 2" receiver
+Mazda,BT-50,2020,2025,Thunder,true,Factory 2" receiver
+Mazda,CX-9,2016,2025,Sport,true,Factory 2" receiver
+Mazda,CX-9,2016,2025,Touring,true,Factory 2" receiver
+Mazda,CX-9,2016,2025,GT,true,Factory 2" receiver
+Mazda,CX-9,2016,2025,Azami,true,Factory 2" receiver
+Mazda,CX-5,2012,2025,Maxx,false,Aftermarket only - no factory 2"
+Mazda,CX-5,2012,2025,Touring,false,Aftermarket only - no factory 2"
+Mazda,CX-8,2018,2025,Sport,true,Factory 2" receiver
+Mazda,CX-8,2018,2025,Touring,true,Factory 2" receiver
+Volkswagen,Amarok,2011,2025,Core,true,Factory 2" receiver
+Volkswagen,Amarok,2011,2025,Highline,true,Factory 2" receiver
+Volkswagen,Amarok,2023,2025,PanAmericana,true,Factory 2" receiver
+Volkswagen,Amarok,2023,2025,Aventura,true,Factory 2" receiver
+Mercedes-Benz,X-Class,2018,2020,Pure,true,Factory 2" receiver
+Mercedes-Benz,X-Class,2018,2020,Progressive,true,Factory 2" receiver
+Mercedes-Benz,X-Class,2018,2020,Power,true,Factory 2" receiver
+RAM,1500,2015,2025,Laramie,true,Factory 2" receiver
+RAM,1500,2015,2025,Limited,true,Factory 2" receiver
+RAM,2500,2015,2025,Laramie,true,Factory 2" receiver
+RAM,3500,2015,2025,Laramie,true,Factory 2" receiver
+Chevrolet,Silverado,2018,2025,LT,true,Factory 2" receiver
+Chevrolet,Silverado,2018,2025,LTZ,true,Factory 2" receiver
+GWM,Ute,2020,2025,Cannon,true,Factory 2" receiver
+GWM,Ute,2020,2025,Cannon-L,true,Factory 2" receiver
+LDV,T60,2017,2025,Pro,true,Factory 2" receiver
+LDV,T60,2017,2025,Luxe,true,Factory 2" receiver
+LDV,T60,2017,2025,Trailrider,true,Factory 2" receiver
+SsangYong,Musso,2018,2025,ELX,true,Factory 2" receiver
+SsangYong,Musso,2018,2025,Ultimate,true,Factory 2" receiver
+SsangYong,Rexton,2018,2025,ELX,true,Factory 2" receiver
+SsangYong,Rexton,2018,2025,Ultimate,true,Factory 2" receiver
+Holden,Colorado,2012,2020,LS,true,Factory 2" receiver
+Holden,Colorado,2012,2020,LT,true,Factory 2" receiver
+Holden,Colorado,2012,2020,LTZ,true,Factory 2" receiver
+Holden,Colorado,2012,2020,Z71,true,Factory 2" receiver
+Holden,Trailblazer,2016,2020,LT,true,Factory 2" receiver
+Holden,Trailblazer,2016,2020,LTZ,true,Factory 2" receiver
+Jeep,Gladiator,2020,2025,Overland,true,Factory 2" receiver
+Jeep,Gladiator,2020,2025,Rubicon,true,Factory 2" receiver
+Jeep,Wrangler,2007,2025,Sport,true,Factory 2" receiver
+Jeep,Wrangler,2007,2025,Rubicon,true,Factory 2" receiver
+Jeep,Grand Cherokee,2011,2025,Laredo,true,Factory 2" receiver
+Jeep,Grand Cherokee,2011,2025,Limited,true,Factory 2" receiver
+Jeep,Grand Cherokee,2011,2025,Overland,true,Factory 2" receiver
+Land Rover,Defender,2020,2025,90,true,Factory 2" receiver
+Land Rover,Defender,2020,2025,110,true,Factory 2" receiver
+Land Rover,Defender,2020,2025,130,true,Factory 2" receiver
+Land Rover,Discovery,2005,2025,SE,true,Factory 2" receiver
+Land Rover,Discovery,2005,2025,HSE,true,Factory 2" receiver
+Land Rover,Discovery Sport,2015,2025,S,false,Aftermarket only - no factory 2"
+Land Rover,Discovery Sport,2015,2025,SE,false,Aftermarket only - no factory 2"
+Hyundai,Tucson,2015,2025,Active,false,No 2" hitch option
+Hyundai,Tucson,2015,2025,Elite,false,No 2" hitch option
+Hyundai,Tucson,2015,2025,Highlander,false,No 2" hitch option
+Hyundai,Santa Fe,2012,2025,Active,true,Factory 2" receiver
+Hyundai,Santa Fe,2012,2025,Elite,true,Factory 2" receiver
+Hyundai,Santa Fe,2012,2025,Highlander,true,Factory 2" receiver
+Hyundai,Palisade,2021,2025,Elite,true,Factory 2" receiver
+Hyundai,Palisade,2021,2025,Highlander,true,Factory 2" receiver
+Kia,Sorento,2015,2025,Sport,true,Factory 2" receiver
+Kia,Sorento,2015,2025,GT-Line,true,Factory 2" receiver
+Kia,Carnival,2015,2025,S,false,Aftermarket only - no factory 2"
+Kia,Carnival,2015,2025,SLi,false,Aftermarket only - no factory 2"
+Kia,Sportage,2016,2025,S,false,No 2" hitch option
+Kia,Sportage,2016,2025,SLi,false,No 2" hitch option
+Subaru,Outback,2015,2025,Base,false,Aftermarket only - no factory 2"
+Subaru,Outback,2015,2025,Premium,false,Aftermarket only - no factory 2"
+Subaru,Forester,2013,2025,Base,false,Aftermarket only - no factory 2"
+Subaru,Forester,2013,2025,Premium,false,Aftermarket only - no factory 2"
+Honda,CR-V,2012,2025,VTi,false,No 2" hitch option
+Honda,CR-V,2012,2025,VTi-L,false,No 2" hitch option
