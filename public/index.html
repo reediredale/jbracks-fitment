@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Racks Fitment API</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #333; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .endpoint {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>JB Racks Vehicle Fitment API</h1>
+    <p>This is an API service for checking vehicle compatibility with JB Racks products.</p>
+
+    <div class="endpoint">
+        <h2>API Endpoint</h2>
+        <p><strong>POST</strong> <code>/api/vehicle-lookup</code></p>
+        <p><strong>Body:</strong></p>
+        <pre><code>{
+  "rego": "ABC123",
+  "state": "NSW"
+}</code></pre>
+    </div>
+
+    <p>For more information, see the <a href="https://github.com/reediredale/jbracks-fitment">GitHub repository</a>.</p>
+</body>
+</html>

@@ -1,4 +1,6 @@
 {
+  "buildCommand": null,
+  "outputDirectory": null,
   "headers": [
     {
       "source": "/api/(.*)",
