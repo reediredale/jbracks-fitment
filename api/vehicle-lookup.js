@@ -1,25 +1,44 @@
-import compatibilityDB from '../data/hitch-compatibility.json';
+// Compatibility database - embedded to avoid import issues
+const compatibilityDB = {
+  "TOYOTA": [
+    { "make": "Toyota", "model": "HiLux", "year_from": 2015, "year_to": 2025, "variant": "SR5", "has_2inch_hitch": true, "notes": "Factory towbar with 2\" receiver" },
+    { "make": "Toyota", "model": "HiLux", "year_from": 2015, "year_to": 2025, "variant": "Rugged", "has_2inch_hitch": true, "notes": "Factory towbar with 2\" receiver" },
+    { "make": "Toyota", "model": "LandCruiser", "year_from": 2007, "year_to": 2021, "variant": "200 Series", "has_2inch_hitch": true, "notes": "" },
+    { "make": "Toyota", "model": "LandCruiser", "year_from": 2021, "year_to": 2025, "variant": "300 Series", "has_2inch_hitch": true, "notes": "" },
+    { "make": "Toyota", "model": "RAV4", "year_from": 2019, "year_to": 2025, "variant": "GXL", "has_2inch_hitch": false, "notes": "Aftermarket hitch available - not factory 2 inch" }
+  ],
+  "FORD": [
+    { "make": "Ford", "model": "Ranger", "year_from": 2011, "year_to": 2025, "variant": "XLT", "has_2inch_hitch": true, "notes": "" },
+    { "make": "Ford", "model": "Ranger", "year_from": 2011, "year_to": 2025, "variant": "Wildtrak", "has_2inch_hitch": true, "notes": "" }
+  ],
+  "NISSAN": [
+    { "make": "Nissan", "model": "Navara", "year_from": 2014, "year_to": 2025, "variant": "ST-X", "has_2inch_hitch": true, "notes": "" }
+  ],
+  "MITSUBISHI": [
+    { "make": "Mitsubishi", "model": "Triton", "year_from": 2015, "year_to": 2025, "variant": "GLS", "has_2inch_hitch": true, "notes": "" }
+  ],
+  "ISUZU": [
+    { "make": "Isuzu", "model": "D-Max", "year_from": 2020, "year_to": 2025, "variant": "X-Terrain", "has_2inch_hitch": true, "notes": "" }
+  ],
+  "MAZDA": [
+    { "make": "Mazda", "model": "BT-50", "year_from": 2020, "year_to": 2025, "variant": "GT", "has_2inch_hitch": true, "notes": "" }
+  ],
+  "HYUNDAI": [
+    { "make": "Hyundai", "model": "Tucson", "year_from": 2021, "year_to": 2025, "variant": "Highlander", "has_2inch_hitch": false, "notes": "No 2\" hitch option" }
+  ]
+};
 
-// --- Matching logic ---
-
+// Matching logic
 function normalise(str) {
-  return (str || '')
-    .toUpperCase()
-    .replace(/[^A-Z0-9 ]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  return (str || '').toUpperCase().replace(/[^A-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
 }
 
 function matchVehicle(make, model, year, variant) {
   const normMake = normalise(make);
-
-  // Try exact make key first, then partial match
   let makeEntries = compatibilityDB[normMake];
+
   if (!makeEntries) {
-    // Fuzzy: find makes that contain or are contained in the lookup
-    const makeKey = Object.keys(compatibilityDB).find(k =>
-      normMake.includes(k) || k.includes(normMake)
-    );
+    const makeKey = Object.keys(compatibilityDB).find(k => normMake.includes(k) || k.includes(normMake));
     if (makeKey) makeEntries = compatibilityDB[makeKey];
   }
 
@@ -29,22 +48,18 @@ function matchVehicle(make, model, year, variant) {
   const normVariant = normalise(variant);
   const yearNum = parseInt(year, 10);
 
-  // Score each entry
   const scored = makeEntries.map(entry => {
     let score = 0;
     const entryModel = normalise(entry.model);
     const entryVariant = normalise(entry.variant);
 
-    // Model match (required)
     if (normModel === entryModel) score += 10;
     else if (normModel.includes(entryModel) || entryModel.includes(normModel)) score += 5;
-    else return { entry, score: 0 }; // No model match = skip
+    else return { entry, score: 0 };
 
-    // Year in range
     if (yearNum >= entry.year_from && yearNum <= entry.year_to) score += 5;
-    else return { entry, score: 0 }; // Out of year range = skip
+    else return { entry, score: 0 };
 
-    // Variant match (bonus, not required)
     if (entryVariant && normVariant) {
       if (normVariant === entryVariant) score += 8;
       else if (normVariant.includes(entryVariant) || entryVariant.includes(normVariant)) score += 3;
@@ -53,20 +68,16 @@ function matchVehicle(make, model, year, variant) {
     return { entry, score };
   });
 
-  // Best match with score > 0
   scored.sort((a, b) => b.score - a.score);
   return scored[0]?.score > 0 ? scored[0].entry : null;
 }
 
-// --- API handler ---
-
 export default async function handler(req, res) {
-  // Set CORS headers explicitly
+  // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -84,37 +95,35 @@ export default async function handler(req, res) {
   const username = 'jbracks';
 
   try {
-    // 1. Call RegCheck API
     const apiUrl = `https://www.regcheck.org.uk/api/reg.asmx/CheckAustralia?RegistrationNumber=${encodeURIComponent(rego)}&username=${encodeURIComponent(username)}&State=${encodeURIComponent(state)}`;
+
+    console.log('Calling RegCheck API:', apiUrl);
 
     const apiRes = await fetch(apiUrl);
     const xml = await apiRes.text();
 
-    // Log response for debugging
-    console.log('RegCheck API response status:', apiRes.status);
-    console.log('RegCheck API response (first 500 chars):', xml.substring(0, 500));
+    console.log('Response status:', apiRes.status);
+    console.log('Response (first 500 chars):', xml.substring(0, 500));
 
-    // 2. Check for API errors in XML
+    // Check for errors
     const errorMatch = xml.match(/<Message>([\s\S]*?)<\/Message>/);
     if (errorMatch) {
       return res.status(400).json({
         error: 'RegCheck API error',
-        details: errorMatch[1],
-        apiResponse: xml
+        details: errorMatch[1]
       });
     }
 
-    // 3. Extract vehicleJson from XML response
+    // Extract vehicleJson
     const jsonMatch = xml.match(/<vehicleJson>([\s\S]*?)<\/vehicleJson>/);
     if (!jsonMatch) {
       return res.status(404).json({
         error: 'Vehicle not found',
-        details: 'No vehicle data returned from RegCheck API',
-        apiResponse: xml.substring(0, 1000)
+        details: 'No vehicle data returned from RegCheck API'
       });
     }
 
-    // 4. Decode XML entities and parse JSON
+    // Parse JSON
     const jsonStr = jsonMatch[1]
       .replace(/&amp;/g, '&')
       .replace(/&lt;/g, '<')
@@ -123,22 +132,16 @@ export default async function handler(req, res) {
 
     const vehicle = JSON.parse(jsonStr);
 
-    // 5. Extract fields for matching
-    const make = vehicle.CarMake?.CurrentTextValue
-              || vehicle.MakeDescription?.CurrentTextValue
-              || '';
-    const model = vehicle.CarModel?.CurrentTextValue
-              || vehicle.ModelDescription?.CurrentTextValue
-              || '';
+    // Extract fields
+    const make = vehicle.CarMake?.CurrentTextValue || '';
+    const model = vehicle.CarModel?.CurrentTextValue || '';
     const year = vehicle.RegistrationYear || '';
-    const variant = vehicle.extended?.variant
-                 || vehicle.extended?.series
-                 || '';
+    const variant = vehicle.extended?.variant || vehicle.extended?.series || '';
 
-    // 6. Match against compatibility DB
+    // Match against compatibility DB
     const match = matchVehicle(make, model, year, variant);
 
-    // 7. Return result
+    // Return result
     return res.status(200).json({
       vehicle: {
         make,
@@ -160,16 +163,17 @@ export default async function handler(req, res) {
             },
           }
         : {
-            compatible: null, // Unknown — not in our DB
+            compatible: null,
             notes: 'Vehicle not found in our compatibility database. Contact us for help.',
             matchedEntry: null,
           },
     });
+
   } catch (err) {
-    console.error('Vehicle lookup error:', err);
+    console.error('Error:', err);
     return res.status(500).json({
-      error: 'Lookup failed',
-      details: err.message,
+      error: err.message,
+      stack: err.stack,
       type: err.name
     });
   }
