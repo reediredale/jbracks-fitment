@@ -1,141 +1,351 @@
-<div id="jb-fitment-checker" class="jb-fitment">
-  <div class="jb-fitment__header">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
-    </svg>
-    <span>Does this rack fit your vehicle?</span>
-  </div>
+<!-- Trigger Button -->
+<button id="jb-open-fitment-modal" class="jb-select-vehicle-btn">
+  Select my vehicle
+</button>
 
-  <div class="jb-fitment__form">
-    <div class="jb-fitment__row">
-      <select id="jb-state" class="jb-fitment__select">
-        <option value="">State</option>
-        <option value="QLD">QLD</option>
-        <option value="NSW">NSW</option>
-        <option value="VIC">VIC</option>
-        <option value="SA">SA</option>
-        <option value="WA">WA</option>
-        <option value="TAS">TAS</option>
-        <option value="ACT">ACT</option>
-        <option value="NT">NT</option>
-      </select>
+<!-- Modal Overlay -->
+<div id="jb-fitment-modal" class="jb-modal" style="display: none;">
+  <div class="jb-modal__backdrop" onclick="JBFitment.closeModal()"></div>
+
+  <div class="jb-modal__content">
+    <!-- Close Button -->
+    <button class="jb-modal__close" onclick="JBFitment.closeModal()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Header -->
+    <h2 class="jb-modal__title">FIND THE PRODUCTS THAT SUIT YOUR VEHICLE</h2>
+
+    <!-- Rego Input -->
+    <div class="jb-modal__section">
+      <label class="jb-modal__label">What is your rego plate?</label>
       <input
         type="text"
-        id="jb-rego"
-        class="jb-fitment__input"
-        placeholder="Enter your rego"
+        id="jb-rego-input"
+        class="jb-modal__rego-input"
+        placeholder="ABC123"
         maxlength="10"
         autocomplete="off"
       />
-      <button id="jb-lookup-btn" class="jb-fitment__btn" onclick="JBFitment.lookup()">
-        Check Fitment
-      </button>
     </div>
-  </div>
 
-  <div id="jb-fitment-result" class="jb-fitment__result" style="display:none;"></div>
+    <!-- State Selection -->
+    <div class="jb-modal__section">
+      <label class="jb-modal__label">Select your state</label>
+      <div class="jb-modal__states">
+        <button class="jb-modal__state-btn" data-state="ACT" onclick="JBFitment.selectState('ACT')">ACT</button>
+        <button class="jb-modal__state-btn" data-state="NSW" onclick="JBFitment.selectState('NSW')">NSW</button>
+        <button class="jb-modal__state-btn" data-state="NT" onclick="JBFitment.selectState('NT')">NT</button>
+        <button class="jb-modal__state-btn" data-state="QLD" onclick="JBFitment.selectState('QLD')">QLD</button>
+        <button class="jb-modal__state-btn" data-state="SA" onclick="JBFitment.selectState('SA')">SA</button>
+        <button class="jb-modal__state-btn" data-state="TAS" onclick="JBFitment.selectState('TAS')">TAS</button>
+        <button class="jb-modal__state-btn" data-state="VIC" onclick="JBFitment.selectState('VIC')">VIC</button>
+        <button class="jb-modal__state-btn" data-state="WA" onclick="JBFitment.selectState('WA')">WA</button>
+      </div>
+    </div>
+
+    <!-- Check Button -->
+    <button id="jb-check-btn" class="jb-modal__check-btn" onclick="JBFitment.lookup()">
+      Check Fitment
+    </button>
+
+    <!-- Result -->
+    <div id="jb-fitment-result" class="jb-modal__result" style="display:none;"></div>
+  </div>
 </div>
 
 <style>
-  .jb-fitment {
-    border: 2px solid #e5e5e5;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    font-family: inherit;
+  /* Trigger Button */
+  .jb-select-vehicle-btn {
+    padding: 14px 28px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
-  .jb-fitment__header {
+  .jb-select-vehicle-btn:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  /* Modal */
+  .jb-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 16px;
+    justify-content: center;
+    padding: 20px;
   }
-  .jb-fitment__row {
+
+  .jb-modal__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+
+  .jb-modal__content {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px 40px 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .jb-modal__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #ef4444;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    padding: 0;
   }
-  .jb-fitment__select {
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 14px;
-    min-width: 80px;
+  .jb-modal__close:hover {
+    background: #dc2626;
   }
-  .jb-fitment__input {
-    flex: 1;
-    padding: 10px 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 14px;
+  .jb-modal__close svg {
+    color: #fff;
+  }
+
+  .jb-modal__title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 40px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .jb-modal__section {
+    margin-bottom: 40px;
+  }
+
+  .jb-modal__label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  .jb-modal__rego-input {
+    width: 100%;
+    padding: 30px;
+    border: 3px solid #000;
+    border-radius: 8px;
+    font-size: 72px;
+    font-weight: 700;
+    text-align: center;
     text-transform: uppercase;
-    min-width: 140px;
+    letter-spacing: 8px;
+    background: #fff;
+    color: #d1d5db;
+    transition: all 0.2s;
   }
-  .jb-fitment__btn {
-    padding: 10px 20px;
+  .jb-modal__rego-input:focus {
+    outline: none;
+    border-color: #000;
+    color: #000;
+  }
+  .jb-modal__rego-input::placeholder {
+    color: #d1d5db;
+  }
+
+  .jb-modal__states {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .jb-modal__state-btn {
+    padding: 20px;
+    background: #fff;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .jb-modal__state-btn:hover {
+    border-color: #000;
+    background: #f9fafb;
+  }
+  .jb-modal__state-btn.selected {
+    background: #fca5a5;
+    border-color: #ef4444;
+    color: #fff;
+  }
+
+  .jb-modal__check-btn {
+    width: 100%;
+    padding: 18px;
     background: #000;
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: all 0.2s;
+    margin-top: 20px;
   }
-  .jb-fitment__btn:hover { opacity: 0.85; }
-  .jb-fitment__btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .jb-fitment__result {
-    margin-top: 16px;
-    padding: 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    line-height: 1.5;
+  .jb-modal__check-btn:hover {
+    background: #1f2937;
   }
-  .jb-fitment__result--compatible {
+  .jb-modal__check-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .jb-modal__result {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .jb-modal__result--compatible {
     background: #f0fdf4;
-    border: 1px solid #86efac;
+    border: 2px solid #86efac;
     color: #166534;
   }
-  .jb-fitment__result--incompatible {
+  .jb-modal__result--incompatible {
     background: #fef2f2;
-    border: 1px solid #fca5a5;
+    border: 2px solid #fca5a5;
     color: #991b1b;
   }
-  .jb-fitment__result--unknown {
+  .jb-modal__result--unknown {
     background: #fffbeb;
-    border: 1px solid #fcd34d;
+    border: 2px solid #fcd34d;
     color: #92400e;
   }
-  .jb-fitment__result--error {
+  .jb-modal__result--error {
     background: #f9fafb;
-    border: 1px solid #d1d5db;
+    border: 2px solid #d1d5db;
     color: #374151;
   }
-  .jb-fitment__vehicle {
-    font-weight: 600;
-    margin-bottom: 4px;
+  .jb-modal__vehicle {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .jb-modal__content {
+      padding: 40px 20px 30px;
+      max-width: 95%;
+    }
+    .jb-modal__title {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .jb-modal__rego-input {
+      font-size: 48px;
+      padding: 20px;
+      letter-spacing: 4px;
+    }
+    .jb-modal__states {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .jb-modal__state-btn {
+      padding: 14px 8px;
+      font-size: 14px;
+    }
   }
 
   @media (max-width: 480px) {
-    .jb-fitment__row { flex-direction: column; }
-    .jb-fitment__select { width: 100%; }
+    .jb-modal__rego-input {
+      font-size: 36px;
+      padding: 16px;
+      letter-spacing: 2px;
+    }
+    .jb-modal__states {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .jb-modal__state-btn {
+      padding: 12px 6px;
+      font-size: 13px;
+    }
   }
 </style>
 
 <script>
   const JBFitment = {
-    API_URL: 'https://your-vercel-app.vercel.app/api/vehicle-lookup',
+    API_URL: 'https://jbracks-fitment.vercel.app/api/vehicle-lookup',
+    selectedState: null,
+
+    openModal() {
+      document.getElementById('jb-fitment-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      document.getElementById('jb-rego-input').focus();
+    },
+
+    closeModal() {
+      document.getElementById('jb-fitment-modal').style.display = 'none';
+      document.body.style.overflow = '';
+      this.resetForm();
+    },
+
+    selectState(state) {
+      this.selectedState = state;
+
+      // Update button states
+      document.querySelectorAll('.jb-modal__state-btn').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+      document.querySelector(`[data-state="${state}"]`).classList.add('selected');
+    },
+
+    resetForm() {
+      document.getElementById('jb-rego-input').value = '';
+      document.getElementById('jb-fitment-result').style.display = 'none';
+      document.querySelectorAll('.jb-modal__state-btn').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+      this.selectedState = null;
+    },
 
     async lookup() {
-      const state = document.getElementById('jb-state').value;
-      const rego = document.getElementById('jb-rego').value.trim().toUpperCase();
-      const btn = document.getElementById('jb-lookup-btn');
+      const rego = document.getElementById('jb-rego-input').value.trim().toUpperCase();
+      const state = this.selectedState;
+      const btn = document.getElementById('jb-check-btn');
       const resultDiv = document.getElementById('jb-fitment-result');
 
       if (!state || !rego) {
-        this.showResult('error', 'Please select your state and enter your rego.');
+        this.showResult('error', 'Please enter your rego plate and select your state.');
         return;
       }
 
@@ -153,7 +363,7 @@
         const data = await res.json();
 
         if (!res.ok) {
-          this.showResult('error', data.error || 'Lookup failed. Please try again.');
+          this.showResult('error', data.error || data.details || 'Lookup failed. Please try again.');
           return;
         }
 
@@ -162,22 +372,22 @@
 
         if (fitment.compatible === true) {
           this.showResult('compatible',
-            `<div class="jb-fitment__vehicle">\u2705 ${vehicleName}</div>
-             Great news! Your vehicle has a compatible 2" hitch receiver. This rack will fit your ${vehicle.make}.
-             ${fitment.notes ? `<br><small>${fitment.notes}</small>` : ''}`
+            `<div class="jb-modal__vehicle">✅ ${vehicleName}</div>
+             <strong>Great news!</strong> Your vehicle has a compatible 2" hitch receiver. This rack will fit your ${vehicle.make}.
+             ${fitment.notes ? `<div style="margin-top:12px;font-size:14px;opacity:0.9;">${fitment.notes}</div>` : ''}`
           );
         } else if (fitment.compatible === false) {
           this.showResult('incompatible',
-            `<div class="jb-fitment__vehicle">\u274C ${vehicleName}</div>
-             Unfortunately, your vehicle doesn't have a standard 2" hitch receiver.
-             ${fitment.notes ? `<br><small>${fitment.notes}</small>` : ''}
-             <br><a href="/pages/contact" style="color:inherit;text-decoration:underline;">Contact us</a> for alternative mounting options.`
+            `<div class="jb-modal__vehicle">❌ ${vehicleName}</div>
+             <strong>Unfortunately</strong>, your vehicle doesn't have a standard 2" hitch receiver.
+             ${fitment.notes ? `<div style="margin-top:12px;font-size:14px;opacity:0.9;">${fitment.notes}</div>` : ''}
+             <div style="margin-top:12px;"><a href="/pages/contact" style="color:inherit;text-decoration:underline;font-weight:600;">Contact us</a> for alternative mounting options.</div>`
           );
         } else {
           this.showResult('unknown',
-            `<div class="jb-fitment__vehicle">\u26A0\uFE0F ${vehicleName}</div>
-             We couldn't confirm fitment for your specific vehicle.
-             <br><a href="/pages/contact" style="color:inherit;text-decoration:underline;">Contact us</a> and we'll check compatibility for you.`
+            `<div class="jb-modal__vehicle">⚠️ ${vehicleName}</div>
+             We couldn't confirm fitment for your specific vehicle in our database.
+             <div style="margin-top:12px;"><a href="/pages/contact" style="color:inherit;text-decoration:underline;font-weight:600;">Contact us</a> and we'll check compatibility for you.</div>`
           );
         }
 
@@ -202,14 +412,27 @@
 
     showResult(type, html) {
       const resultDiv = document.getElementById('jb-fitment-result');
-      resultDiv.className = `jb-fitment__result jb-fitment__result--${type}`;
+      resultDiv.className = `jb-modal__result jb-modal__result--${type}`;
       resultDiv.innerHTML = html;
       resultDiv.style.display = 'block';
     }
   };
 
-  // Allow Enter key to trigger lookup
-  document.getElementById('jb-rego')?.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') JBFitment.lookup();
+  // Setup event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    // Open modal button
+    document.getElementById('jb-open-fitment-modal')?.addEventListener('click', () => {
+      JBFitment.openModal();
+    });
+
+    // Allow Enter key to trigger lookup
+    document.getElementById('jb-rego-input')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') JBFitment.lookup();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') JBFitment.closeModal();
+    });
   });
 </script>
